@@ -22,3 +22,11 @@ def analyze_event(event: Event):
         print(f"[WhatsApp SIMULATED] Výhodný lístok: {event.name} ({score:.1f}) €{event.price}")
 
     return {"AttractiScore": round(score, 1), "recommendation": "Buy" if should_buy else "Skip"}
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def root():
+    return {"message": "AI Ticket Reselling API is working ✅"}
