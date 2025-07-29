@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Ticket Reselling Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background-color: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h1>Vyhodnotené Podujatia</h1>
+    <table>
+        <tr>
+            <th>Názov</th>
+            <th>Dátum</th>
+            <th>Cena (€)</th>
+            <th>Zisk (€)</th>
+            <th>AttractiScore</th>
+            <th>Odporúčanie</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row['Názov'] }}</td>
+            <td>{{ row['Dátum'] }}</td>
+            <td>{{ row['Cena (€)'] }}</td>
+            <td>{{ row['Zisk (€)'] }}</td>
+            <td>{{ row['AttractiScore'] }}</td>
+            <td>{{ row['Odporúčanie'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
