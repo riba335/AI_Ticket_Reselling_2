@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="sk">
 <head>
-    <title>AI Ticket Dashboard</title>
-    <link href="/static/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>AI Ticket Reselling Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>AI Ticket Dashboard</h1>
+    <h1>Prehľad podujatí</h1>
     <table>
-        <thead>
-            <tr>
-                <th>Názov podujatia</th>
-                <th>Dátum</th>
-                <th>Cena</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for event in events %}
-            <tr>
-                <td>{{ event.name }}</td>
-                <td>{{ event.date }}</td>
-                <td>{{ event.price }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
+        <tr>
+            <th>Názov</th>
+            <th>Dátum</th>
+            <th>Cena</th>
+        </tr>
+        {% for event in events %}
+        <tr>
+            <td>{{ event['name'] }}</td>
+            <td>{{ event['date'] }}</td>
+            <td>{{ event['price'] }}</td>
+        </tr>
+        {% endfor %}
     </table>
 </body>
 </html>
