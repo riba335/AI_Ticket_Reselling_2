@@ -1,3 +1,4 @@
+
 services:
   - type: web
     name: ai-ticket-reselling-2
@@ -6,11 +7,3 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host=0.0.0.0 --port=10000
     autoDeploy: true
-    envVars: []
-    region: frankfurt
-    numInstances: 1
-    runtimeEnvVars: []
-    healthCheckPath: /health
-    schedule:
-      - cron: "*/10 * * * *"
-        command: "python scraper.py"
